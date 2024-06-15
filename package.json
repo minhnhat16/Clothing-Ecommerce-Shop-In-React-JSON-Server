@@ -5,6 +5,7 @@
   "homepage": "https://minhnhat16.github.io/my-ecommerce-app",
   "type": "module",
   "scripts": {
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build'",
     "start": "concurrently \"npm run dev\" \"npm run json\"",
     "dev": "vite",
