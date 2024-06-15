@@ -9,9 +9,9 @@
     "dev": "vite",
     "build": "vite build",
     "test": "jest",
+    "deploy": "gh-pages -d build'",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "deploy": "gh-pages -d build'",
     "json": "json-server --watch src/data/db.json --port 8080"
   },
   "dependencies": {
