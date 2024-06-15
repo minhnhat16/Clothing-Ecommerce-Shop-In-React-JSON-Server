@@ -3,9 +3,11 @@
   "verbose": true,
   "setupFilesAfterEnv": ["<rootDir>/src/setupTests.js"],
   "transform": {
-    "^.+\\.jsx?$": "babel-jest",
-    "\\.(css|less|scss|sass)$": "jest-transform-stub"
+    "^.+\\.jsx?$": "babel-jest"
   },
+  "transformIgnorePatterns": [
+    "/node_modules/(?!nanoid)" 
+  ],
   "moduleNameMapper": {
     "\\.(css|less|scss|sass)$": "identity-obj-proxy"
   },
