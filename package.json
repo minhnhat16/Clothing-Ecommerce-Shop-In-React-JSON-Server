@@ -5,11 +5,11 @@
   "homepage": "https://minhnhat16.github.io/my-ecommerce-app",
   "type": "module",
   "scripts": {
+    "deploy": "gh-pages -d build'",
     "start": "concurrently \"npm run dev\" \"npm run json\"",
     "dev": "vite",
     "build": "vite build",
     "test": "jest",
-    "deploy": "gh-pages -d build'",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "json": "json-server --watch src/data/db.json --port 8080"
