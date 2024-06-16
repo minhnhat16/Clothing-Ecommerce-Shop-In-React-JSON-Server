@@ -34,8 +34,8 @@ jobs:
         run: |
           npm install -g json-server
           json-server --watch ./src/data/db.json --routes ./src/data/routes.json --port 9090 &
-      - name: Run json data
-        run:  npm run json
+      # - name: Run json data
+      #   run:  npm run json
 
       - name: Wait for json-server to start
         run: |
