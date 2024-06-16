@@ -26,10 +26,16 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - run : npm install 
     - run: npm ci
     - run: npm run build
+    - run: npm run linte
     - run: npm test
+    - run: npm run format
+    - name: Check commit message 
 
+      uses: wagoid/commitlint-github-action@v3
+    
     - name: Deploy with gh-pages
       run: |
         git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
