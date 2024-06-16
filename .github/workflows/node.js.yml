@@ -34,21 +34,12 @@ jobs:
         run: |
           npm install -g json-server
           json-server --watch ./src/data/db.json --routes ./src/data/routes.json --port 9090 &
-      # - name: Run json data
-      #   run:  npm run json
-
-      # - name: Verify port accessibility
-      #   run: |
-      #     nc -zv localhost 9090
 
       - name: Run tests
         run: npm test
 
       - name: Format code
         run: npm run format
-
-      - name : Start project 
-        run: npm start build
 
       - name: Deploy with gh-pages
         run: |
