@@ -18,7 +18,14 @@ jobs:
       matrix:
         node-version: [18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
+    
+    services:
+      json-server:
+        image: typicode/json-server
+        options: >-
+          --watch /github/workspace/src/data/db.json
+          --routes /github/workspace/src/data/routes.json
+          -p 8080:8080  # Map container port 8080 to host port 8080
     steps:
     - uses: actions/checkout@v4
     - name: Use Node.js ${{ matrix.node-version }}
@@ -29,6 +36,7 @@ jobs:
     - run: npm ci
     - run : npm install 
     - run: npm run build
+    - run: npm run json
     - run: npm test
     - run: npm run format
 
