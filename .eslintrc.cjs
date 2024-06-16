@@ -16,7 +16,13 @@ module.exports = {
   plugins: ['react-refresh','react','@typescript-eslint','prettier'],
   rules: {
     'react/react-in-jsx-scope' : 'off',
-    'prettier/prettier': 'off',
+    'prettier/prettier': ['error', {
+      tabWidth: 2,
+      useTabs: false,
+      singleQuote: true,
+      semi: true,
+      // Add other Prettier preferences as needed
+    }],
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },
