@@ -15,7 +15,6 @@ export const landingLoader = async () => {
 
 const Landing = () => {
   const { products } = useLoaderData();
-  const navigate = useNavigate();
 
   return (
     <main>
