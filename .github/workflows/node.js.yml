@@ -34,7 +34,12 @@ jobs:
         run: |
           npm install -g json-server
           json-server --watch ./src/data/db.json --routes ./src/data/routes.json --port 8080 &
-
+        
+      - name: Verify port accessibility
+        run: |
+          sleep 5  # Wait for json-server to start (adjust as needed)
+          nc -zv localhost 8080
+          
       - name: Run tests
         run: npm test
 
