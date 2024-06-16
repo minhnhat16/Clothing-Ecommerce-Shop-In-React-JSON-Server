@@ -1,10 +1,10 @@
-name: Node.js CI
+name: Vite Build and Test
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [main]
   pull_request:
-    branches: [ "main" ]
+    branches: [main]
 
 jobs:
   build:
@@ -27,7 +27,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build application
+      - name: Build application with Vite
         run: npm run build
 
       - name: Start json-server
