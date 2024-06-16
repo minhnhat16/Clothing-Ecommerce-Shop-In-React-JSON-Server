@@ -6,16 +6,16 @@
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "start": "concurrently \"npm run dev\" \"npm run json\"",
     "dev": "vite",
     "build": "vite build",
     "test": "jest",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "json": "json-server --watch src/data/db.json --port 8080"
+    "json": "json-server --watch src/data/db.json --port 8080",
+    "gh-pages": "gh-pages -d dist"
   },
-  
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
     "axios": "^1.6.0",
