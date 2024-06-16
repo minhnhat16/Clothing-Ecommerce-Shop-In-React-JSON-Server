@@ -26,10 +26,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run : npm install 
     - run: npm ci
+    - run : npm install 
     - run: npm run build
-    - run: npm run lint
     - run: npm test
     - run: npm run format
 
@@ -43,4 +42,4 @@ jobs:
         npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+        publish_dir: ./dist
