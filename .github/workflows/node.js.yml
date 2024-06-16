@@ -37,10 +37,6 @@ jobs:
       # - name: Run json data
       #   run:  npm run json
 
-      - name: Wait for json-server to start
-        run: |
-          npm install -g wait-on
-          wait-on http://localhost:9090
 
       - name: Verify port accessibility
         run: |
@@ -53,6 +49,9 @@ jobs:
 
       - name: Format code
         run: npm run format
+        
+      - name : Start project 
+        run: npm start build
 
       - name: Deploy with gh-pages
         run: |
