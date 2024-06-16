@@ -33,18 +33,18 @@ jobs:
       - name: Start json-server
         run: |
           npm install -g json-server
-          json-server --watch ./src/data/db.json --routes ./src/data/routes.json --port 8080 &
+          json-server --watch ./src/data/db.json --routes ./src/data/routes.json --port 9090 &
       - name: Run json data
         run:  npm run json
-        
+
       - name: Wait for json-server to start
         run: |
           npm install -g wait-on
-          wait-on http://localhost:8080
+          wait-on http://localhost:9090
 
       - name: Verify port accessibility
         run: |
-          nc -zv localhost 8080
+          nc -zv localhost 9090
 
       
 

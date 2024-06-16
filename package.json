@@ -14,7 +14,7 @@
     "lint:fix ": "eslint src --ext js,jsx,ts,tsx,css,html --fix",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,html}'",
     "preview": "vite preview",
-    "json": "json-server --watch src/data/db.json --port 8080",
+    "json": "json-server --watch src/data/db.json --port 9090",
     "gh-pages": "gh-pages -d dist"
   },
   "dependencies": {

@@ -6,7 +6,7 @@ import axios from "axios";
 
 export const landingLoader = async () => {
   const response = await axios(
-    `http://localhost:8080/products?_page=1&_limit=8`
+    `http://localhost:9090/products?_page=1&_limit=8`
   );
   const data = response.data;
 
