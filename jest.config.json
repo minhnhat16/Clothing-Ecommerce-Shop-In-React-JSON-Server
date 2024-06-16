@@ -1,0 +1,15 @@
+{
+  "bail": 1,
+  "verbose": true,
+  "setupFilesAfterEnv": ["<rootDir>/src/setupTests.js"],
+  "transform": {
+    "^.+\\.jsx?$": "babel-jest"
+  },
+  "transformIgnorePatterns": [
+    "/node_modules/(?!nanoid)" 
+  ],
+  "moduleNameMapper": {
+    "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+  },
+  "testEnvironment": "jsdom"
+}

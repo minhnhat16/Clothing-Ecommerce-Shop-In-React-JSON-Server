@@ -1,4 +1,4 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import {
   About,
   Cart,
@@ -14,15 +14,15 @@ import {
   Search,
   ThankYou,
   OrderHistory
-} from './pages';
-import { landingLoader } from './pages/Landing';
-import { singleProductLoader } from './pages/SingleProduct';
-import { shopLoader } from './pages/Shop';
-import { ToastContainer } from 'react-toastify';
+} from "./pages";
+import { landingLoader } from "./pages/Landing";
+import { singleProductLoader } from "./pages/SingleProduct";
+import { shopLoader } from "./pages/Shop";
+import { ToastContainer } from "react-toastify";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <HomeLayout />,
     children: [
       {
@@ -31,58 +31,58 @@ const router = createBrowserRouter([
         loader: landingLoader,
       },
       {
-        path: 'shop',
+        path: "shop",
         element: <Shop />,
         loader: shopLoader
 
       },
       {
-        path: 'shop/product/:id',
+        path: "shop/product/:id",
         element: <SingleProduct />,
         loader: singleProductLoader,
       },
       {
-        path: 'about',
+        path: "about",
         element: <About />,
       },
       {
-        path: 'login',
+        path: "login",
         element: <Login />,
       },
       {
-        path: 'register',
+        path: "register",
         element: <Register />,
       },
       {
-        path: 'contact',
+        path: "contact",
         element: <Contact />,
       },
       {
-        path: 'about-us',
+        path: "about-us",
         element: <About />,
       },
       {
-        path: 'cart',
+        path: "cart",
         element: <Cart />,
       },
       {
-        path: 'wishlist',
+        path: "wishlist",
         element: <Wishlist />,
       },
       {
-        path: 'user-profile',
+        path: "user-profile",
         element: <Profile />,
       },
       {
-        path:'search',
+        path:"search",
         element: <Search />
       },
       {
-        path:'thank-you',
+        path:"thank-you",
         element: <ThankYou />
       },
       {
-        path:'order-history',
+        path:"order-history",
         element: <OrderHistory />
       }
     ],
@@ -93,7 +93,7 @@ function App() {
   return (
     <>
       <RouterProvider router={router} />
-      <ToastContainer position='top-center' />
+      <ToastContainer position="top-center" />
     </>
   );
 }
