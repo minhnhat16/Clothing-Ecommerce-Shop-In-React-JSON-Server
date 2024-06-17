@@ -36,7 +36,7 @@ const Login = () => {
   const proceedLogin = (e) => {
     e.preventDefault();
     if (isValidate()) {
-      fetch("http://localhost:9090/user")
+      fetch("https://my-ecommerce-data.onrender.com/user")
         .then((res) => res.json())
         .then((res) => {
           let data = res;
