@@ -28,9 +28,13 @@ npm install serve --save-dev
 ```
 3. Install json server to host a port contain data json:
 ```
-npm install serve --save-dev
+npm install -g json-server
 ```
-4. Run build application
+4. Start the json server in port 9090 for app build
+``
+json-server --watch src/data/db.json --port 9090
+```
+5. Run build application
 ```
 npm start buid 
 ```
