@@ -55,9 +55,6 @@ jobs:
           nohup npm run json &
           sleep 5 # Wait for json-server to start (adjust as necessary)
         
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
 
       - name: Deploy with gh-pages
         run: |
