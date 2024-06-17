@@ -20,6 +20,7 @@ import { singleProductLoader } from "./pages/SingleProduct";
 import { shopLoader } from "./pages/Shop";
 import { ToastContainer } from "react-toastify";
 
+// Create the router with the basename option
 const router = createBrowserRouter([
   {
     path: "/",
@@ -33,8 +34,7 @@ const router = createBrowserRouter([
       {
         path: "shop",
         element: <Shop />,
-        loader: shopLoader
-
+        loader: shopLoader,
       },
       {
         path: "shop/product/:id",
@@ -87,7 +87,7 @@ const router = createBrowserRouter([
       }
     ],
   },
-]);
+], { basename: '/Clothing-Ecommerce-Shop-In-React-JSON-Server' });
 
 function App() {
   return (
