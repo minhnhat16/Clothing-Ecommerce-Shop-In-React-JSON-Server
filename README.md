@@ -22,20 +22,21 @@ npm start
 ```
 npm install
 ```
-
-2. Install json server to host a port contain data json:
+2. Install serve to run a build for project
 ```
 npm install serve --save-dev
 ```
-
-3. Run build application
+3. Install json server to host a port contain data json:
 ```
-npm start buid
+npm install serve --save-dev
+```
+4. Run build application
+```
+npm start buid 
 ```
 the local port appearce after build done
-
-# Script for CICD .yml
-
+# Deploying site: https://minhnhat16.github.io/Clothing-Ecommerce-Shop-In-React-JSON-Server/
+# Script for CICD .yml 
 - Choose branch 'main' which use the repository to build
 - Deploy with Node 18.x 
 - Use check out in git brach to check new pull features
