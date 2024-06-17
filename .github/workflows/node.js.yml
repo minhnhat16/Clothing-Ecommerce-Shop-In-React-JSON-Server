@@ -46,9 +46,15 @@ jobs:
         uses: actions/configure-pages@v4
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        # Start json-server in the background
         with:
           # Upload dist folder
           path: './dist'
+      - name: Start json-server
+        run: |
+          nohup npm run json &
+          sleep 5 # Wait for json-server to start (adjust as necessary)
+        
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
