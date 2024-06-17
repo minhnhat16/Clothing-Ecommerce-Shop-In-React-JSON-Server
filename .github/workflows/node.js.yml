@@ -35,7 +35,7 @@ jobs:
 
     - name: Start JSON Server
       run: json-server --watch src/data/db.json --port 9090 &
-      continue-on-error: true
+      continue-on-error: false
 
     - name: Wait for JSON Server to be ready
       run: npx wait-on http://localhost:9090
