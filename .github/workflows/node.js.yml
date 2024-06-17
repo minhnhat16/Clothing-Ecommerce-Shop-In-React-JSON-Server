@@ -35,12 +35,19 @@ jobs:
 
     - name: Start JSON Server
       run: json-server --watch src/data/db.json --port 9090 &
-
+      env:
+              PORT: 9090
     - name: Wait for JSON Server to be ready
       run: npx wait-on http://localhost:9090
 
     - run: npm run build
 
+    - name: Start JSON Server for tests
+      run: |
+        pkill -f json-server || true
+        json-server --watch src/data/db.json --port 9090 &
+        npx wait-on http://localhost:9090
+        
     - run: npm test
 
     - run: npm run format
