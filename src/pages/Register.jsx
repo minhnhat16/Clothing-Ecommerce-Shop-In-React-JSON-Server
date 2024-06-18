@@ -67,7 +67,7 @@ const Register = () => {
     };
 
     if (isValidate()) {
-      fetch("http://localhost:9090/user", {
+      fetch("https://my-ecommerce-data.onrender.com/user", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(regObj),

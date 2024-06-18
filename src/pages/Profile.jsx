@@ -23,7 +23,7 @@ const Profile = () => {
 
   const getUserData = async () => {
     try {
-      const response = await axios(`http://localhost:9090/user/${id}`);
+      const response = await axios(`https://my-ecommerce-data.onrender.com/user/${id}`);
       const data = response.data;
       setUserFormData({
         name: data.name,
@@ -51,11 +51,11 @@ const Profile = () => {
     e.preventDefault();
     try{
 
-      const getResponse = await axios(`http://localhost:9090/user/${id}`);
+      const getResponse = await axios(`https://my-ecommerce-data.onrender.com/user/${id}`);
       const userObj = getResponse.data;
 
       // saljemo get(default) request
-      const putResponse = await axios.put(`http://localhost:9090/user/${id}`, {
+      const putResponse = await axios.put(`https://my-ecommerce-data.onrender.com/user/${id}`, {
         id: id,
         name: userFormData.name,
         lastname: userFormData.lastname,

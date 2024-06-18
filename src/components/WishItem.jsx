@@ -12,7 +12,7 @@ const WishItem = ({ item, counter }) => {
 
     const removeFromWishlistHandler = async (product) => {
       const getResponse = await axios.get(
-        `http://localhost:9090/user/${localStorage.getItem("id")}`
+        `https://my-ecommerce-data.onrender.com/user/${localStorage.getItem("id")}`
       );
       const userObj = getResponse.data;
   
@@ -23,7 +23,7 @@ const WishItem = ({ item, counter }) => {
       userObj.userWishlist = newWishlist;
   
       const postResponse = await axios.put(
-        `http://localhost:9090/user/${localStorage.getItem("id")}`,
+        `https://my-ecommerce-data.onrender.com/user/${localStorage.getItem("id")}`,
         userObj
       );
   

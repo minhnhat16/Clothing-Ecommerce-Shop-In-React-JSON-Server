@@ -25,7 +25,7 @@ import { store } from "../store";
 export const singleProductLoader = async ({ params }) => {
   const { id } = params;
 
-  const response = await axios(`http://localhost:9090/products/${id}`);
+  const response = await axios(`https://my-ecommerce-data.onrender.com/products/${id}`);
 
   return { productData: response.data };
 };
@@ -69,7 +69,7 @@ const SingleProduct = () => {
   const addToWishlistHandler = async (product) => {
     try {
       const getResponse = await axios.get(
-        `http://localhost:9090/user/${localStorage.getItem("id")}`
+        `https://my-ecommerce-data.onrender.com/user/${localStorage.getItem("id")}`
       );
       const userObj = getResponse.data;
 
@@ -79,7 +79,7 @@ const SingleProduct = () => {
       userObj.userWishlist.push(product);
 
       const postResponse = await axios.put(
-        `http://localhost:9090/user/${localStorage.getItem("id")}`,
+        `https://my-ecommerce-data.onrender.com/user/${localStorage.getItem("id")}`,
         userObj
       );
 
@@ -93,7 +93,7 @@ const SingleProduct = () => {
 
   const removeFromWishlistHandler = async (product) => {
     const getResponse = await axios.get(
-      `http://localhost:9090/user/${localStorage.getItem("id")}`
+      `https://my-ecommerce-data.onrender.com/user/${localStorage.getItem("id")}`
     );
     const userObj = getResponse.data;
 
@@ -106,7 +106,7 @@ const SingleProduct = () => {
     userObj.userWishlist = newWishlist;
 
     const postResponse = await axios.put(
-      `http://localhost:9090/user/${localStorage.getItem("id")}`,
+      `https://my-ecommerce-data.onrender.com/user/${localStorage.getItem("id")}`,
       userObj
     );
 

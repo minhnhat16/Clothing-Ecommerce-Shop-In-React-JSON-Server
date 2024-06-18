@@ -53,7 +53,7 @@ export const shopLoader = async ({ request }) => {
 
   try {
     const response = await axios(
-      `http://localhost:9090/products${parameter}`
+      `https://my-ecommerce-data.onrender.com/products${parameter}`
 
     );
     let data = response.data;
